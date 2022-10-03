@@ -3,21 +3,28 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import styles from './Result.style';
 
-const Result = ({ navigation }) => {
+import Title from '../../Components/Title';
+
+const Result = ({ navigation, route }) => {
+  const { score } = route.params
+
+  const resultBanner = score > 40 ? require("../../Components/Assets/Home.png") : require("../../Components/Assets/Resu.png")
+
+
+
   return (
-    <View>
-      <View>
-        <Text>Result</Text>
-      </View>
+    <View style={styles.container}>
+      <Title text={'Results'} />
+      <Text style={styles.scorevalue}>{score}</Text>
       <View style={styles.bannerContainer}>
         <Image
-          source={require('../../Components/Assets/Home.png')}
+          source={resultBanner}
           style={styles.banner}
         />
       </View>
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Text>Home</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.buttontext}>Go To Home</Text>
         </TouchableOpacity>
       </View>
     </View>

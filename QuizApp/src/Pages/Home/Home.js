@@ -8,7 +8,7 @@ import Title from '../../Components/Title';
 const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Title />
+      <Title text={'Quizzler'}/>
       <View style={styles.bannerContainer}>
         <Image
           source={require('../../Components/Assets/HomeBir.png')}
