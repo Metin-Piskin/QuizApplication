@@ -17,6 +17,7 @@ const Quiz = ({ navigation }) => {
   const [ques, setQues] = useState(0);
   const [options, setOptions] = useState([]);
   const [score, setScore] = useState(0);
+  const [number, setNumber] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
   const getQuiz = async () => {
@@ -34,6 +35,7 @@ const Quiz = ({ navigation }) => {
 
   const handleNextPress = () => {
     setQues(ques + 1)
+    setNumber(number + 1)
     setOptions(generateOptionsAndShuffle(questions[ques + 1]))
   }
 
@@ -50,6 +52,7 @@ const Quiz = ({ navigation }) => {
     }
     if (ques !== 9) {
       setQues(ques + 1)
+      setNumber(number + 1)
       setOptions(generateOptionsAndShuffle(questions[ques + 1]))
     }
     if (ques === 9) {
@@ -71,21 +74,34 @@ const Quiz = ({ navigation }) => {
         questions && (
           <View style={styles.parent}>
             <View style={styles.top}>
+              <Text style={styles.number}>{number}/10</Text>
               <Text style={styles.question}>
-                {ques}. {decodeURIComponent(questions[ques].question)}
+                {decodeURIComponent(questions[ques].question)}
               </Text>
             </View>
             <View style={styles.options}>
               <TouchableOpacity style={styles.optionbutton} onPress={() => handleSelectedOption(options[0])}>
+                <View style={styles.optionsayi}>
+                  <Text style={styles.optionsayitext}>1</Text>
+                </View>
                 <Text style={styles.option}>{decodeURIComponent(options[0])}</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.optionbutton} onPress={() => handleSelectedOption(options[1])}>
+                <View style={styles.optionsayi}>
+                  <Text style={styles.optionsayitext}>2</Text>
+                </View>
                 <Text style={styles.option}>{decodeURIComponent(options[1])}</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.optionbutton} onPress={() => handleSelectedOption(options[2])}>
+                <View style={styles.optionsayi}>
+                  <Text style={styles.optionsayitext}>3</Text>
+                </View>
                 <Text style={styles.option}>{decodeURIComponent(options[2])}</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.optionbutton} onPress={() => handleSelectedOption(options[3])}>
+                <View style={styles.optionsayi}>
+                  <Text style={styles.optionsayitext}>4</Text>
+                </View>
                 <Text style={styles.option}>{decodeURIComponent(options[3])}</Text>
               </TouchableOpacity>
             </View>

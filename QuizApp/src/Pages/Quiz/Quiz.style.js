@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
+        backgroundColor: '#1F1147',
         paddingTop: 13,
         paddingHorizontal: 20,
         height: '100%'
@@ -12,8 +13,13 @@ export default StyleSheet.create({
     top: {
         marginVertical: 16,
     },
+    number: {
+        color: '#37E9BB',
+        fontWeight: 'bold',
+        fontSize: 18,
+    },
     question: {
-        color: '#000',
+        color: '#fff',
         fontSize: 28,
     },
     options: {
@@ -21,11 +27,28 @@ export default StyleSheet.create({
         marginVertical: 16,
     },
     optionbutton: {
-        backgroundColor: '#34A0A4',
+        backgroundColor: '#1F1147',
+        borderWidth: 1,
+        borderColor: '#37E9BB',
+        flexDirection: "row",
+        alignItems: "center",
         paddingVertical: 12,
         paddingHorizontal: 12,
         marginVertical: 6,
-        borderRadius: 12
+        borderRadius: 20
+    },
+    optionsayi: {
+        backgroundColor: '#6949FE',
+        justifyContent: "center",
+        marginHorizontal: 10,
+        borderRadius: 35
+    },
+    optionsayitext: {
+        color: '#fff',
+        fontSize: 18,
+        paddingHorizontal: 12,
+        paddingVertical: 5,
+        fontWeight: "600"
     },
     option: {
         color: '#fff',
@@ -39,7 +62,7 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     button: {
-        backgroundColor: '#1A759F',
+        backgroundColor: '#6949FE',
         padding: 12,
         paddingHorizontal: 16,
         borderRadius: 16,
